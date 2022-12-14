@@ -60,7 +60,7 @@ def banner():
 def main():
     banner()
     liste = dosya_oku(input("Site listesi: "))
-    kayit = open(input("Kayıt edilmesini istediğiniz dosya: "), "w")
+    dosya = input("Kayıt edilmesini istediğiniz dosya: ")
     for item in liste:
         url = item.split("|")[0]
         usr = item.split("|")[1]
@@ -68,10 +68,9 @@ def main():
         durum = giris_yap(url, usr, pss)
         if durum:
             print(f"{Fore.GREEN}  + {Fore.WHITE}Giriş başarılı --> {item}")
-            kayit.write(item+"\n")
+            open(dosya, "a").write(item+"\n")
         else:
             print(f"{Fore.RED}  + {Fore.WHITE}Giriş başarısız --> {item}")
-    kayit.close()
 
 if (__name__ == "__main__"):
     try:
