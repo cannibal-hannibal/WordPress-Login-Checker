@@ -71,7 +71,6 @@ def main():
             kayit.write(item+"\n")
         else:
             print(f"{Fore.RED}  + {Fore.WHITE}Giriş başarısız --> {item}")
-    kayit.close()
     
 
 if (__name__ == "__main__"):
